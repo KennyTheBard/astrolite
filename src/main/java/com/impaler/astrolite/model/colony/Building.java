@@ -1,6 +1,5 @@
-package com.impaler.astrolite.model.space;
+package com.impaler.astrolite.model.colony;
 
-import com.impaler.astrolite.model.Player;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -10,14 +9,17 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "fleet")
-public class Fleet {
+@Table(name = "building")
+public class Building {
 
     @Id
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "owner")
-    private Player owner;
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "max_level")
+    private Integer maxLevel;
 
 }

@@ -20,10 +20,10 @@ public class SolarSystem {
     private String name;
 
     @Column(name = "distance_to_core")
-    private Float distanceToCore;
+    private Integer distanceToCore;
 
     @Column(name = "distance_to_core")
-    private Float angleToCore;
+    private Integer angleToCore;
 
     @Column(name = "ore_modif")
     private Float oreModifier;

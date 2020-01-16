@@ -1,12 +1,9 @@
 package com.impaler.astrolite.model.space;
 
-import com.impaler.astrolite.model.enums.ShipClass;
+import com.impaler.astrolite.model.colony.Building;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -17,13 +14,22 @@ public class Ship {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "ship_class")
-    private ShipClass shipClass;
-
     @Column(name = "name")
     private String name;
 
-    @Column(name = "ship_model")
-    private ShipModel shipModel;
+    @ManyToOne
+    @JoinColumn(name = "build_at")
+    private Building buildAt;
 
+    @Column(name = "build_time_sec")
+    private Integer buildTimeInSec;
+
+    @Column(name = "travel_speed")
+    private Float travelSpeed;
+
+    @Column(name = "health")
+    private Integer health;
+
+    @Column(name = "storage")
+    private Integer storage;
 }

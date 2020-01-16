@@ -1,11 +1,9 @@
 package com.impaler.astrolite.model.colony;
 
+import com.impaler.astrolite.model.Player;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,25 +17,33 @@ public class Colony {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "soalr_system")
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Player owner;
+
+    @OneToOne
+    @JoinColumn(name = "solar_system_id")
     private SolarSystem solarSystem;
 
+    @Column(name = "max_storage")
+    private Integer maxStorage;
+
     @Column(name = "ore")
-    private Long ore;
+    private Integer ore;
 
     @Column(name = "ore_storage")
-    private Long oreStorage;
+    private Integer orePerHour;
 
     @Column(name = "carbon")
-    private Long carbon;
+    private Integer carbonite;
 
     @Column(name = "carbon_storage")
-    private Long carbonStorage;
+    private Integer carbonitePerHour;
 
     @Column(name = "crystalite")
-    private Long crystalite;
+    private Integer uranium;
 
     @Column(name = "crystalite_storage")
-    private Long crystaliteStorage;
+    private Integer uraniumPerHour;
 
 }

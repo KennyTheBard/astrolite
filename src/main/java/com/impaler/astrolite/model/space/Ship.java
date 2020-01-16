@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "space_ship")
+@Table(name = "ship")
 public class Ship {
 
     @Id

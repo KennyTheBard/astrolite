@@ -3,11 +3,12 @@ package com.impaler.astrolite.model.research;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "constraint_research")
-public class ConstraintResearch {
+public class ConstraintResearch implements Serializable {
 
     @Id
     @OneToOne

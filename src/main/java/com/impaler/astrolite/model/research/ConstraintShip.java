@@ -4,11 +4,12 @@ import com.impaler.astrolite.model.space.Ship;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "constraint_ship")
-public class ConstraintShip {
+public class ConstraintShip implements Serializable {
 
     @Id
     @ManyToOne

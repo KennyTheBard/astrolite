@@ -6,11 +6,12 @@ import com.impaler.astrolite.model.space.Ship;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "player_to_research")
-public class PlayerToResearch {
+public class PlayerToResearch implements Serializable {
 
     @Id
     @ManyToOne

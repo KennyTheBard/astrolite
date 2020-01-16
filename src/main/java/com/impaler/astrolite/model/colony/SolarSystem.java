@@ -22,16 +22,16 @@ public class SolarSystem {
     @Column(name = "distance_to_core")
     private Integer distanceToCore;
 
-    @Column(name = "distance_to_core")
+    @Column(name = "angle_to_core")
     private Integer angleToCore;
 
-    @Column(name = "ore_modif")
+    @Column(name = "ore_modifier")
     private Float oreModifier;
 
-    @Column(name = "carbon_modif")
-    private Float carbonModifier;
+    @Column(name = "carbonite_modifier")
+    private Float carboniteModifier;
 
-    @Column(name = "crystalite_modif")
-    private Float crystaliteModifier;
+    @Column(name = "uranium_modifier")
+    private Float uraniumModifier;
 
 }

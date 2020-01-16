@@ -22,4 +22,6 @@ public class Building {
     @Column(name = "max_level")
     private Integer maxLevel;
 
+
+
 }

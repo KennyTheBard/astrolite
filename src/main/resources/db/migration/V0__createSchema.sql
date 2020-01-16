@@ -24,7 +24,8 @@ CREATE TABLE colony (
     carbonite bigint NOT NULL,
     carbonite_per_hour integer NOT NULL,
     uranium bigint NOT NULL,
-    uranium_per_hour integer NOT NULL
+    uranium_per_hour integer NOT NULL,
+    last_resource_interrogation timestamp NOT NULL
 );
 
 CREATE TABLE building (
@@ -37,7 +38,7 @@ CREATE TABLE building_to_colony (
     id bigserial PRIMARY KEY,
     building_id bigint NOT NULL REFERENCES building(id),
     colony_id bigint NOT NULL REFERENCES colony(id),
-    current_level NOT NULL integer
+    current_level integer NOT NULL
 );
 
 CREATE TABLE ship (
@@ -58,15 +59,15 @@ CREATE TABLE offensive_stats (
     spd integer NOT NULL
 );
 
-CREATE TABLE defense_fleet (
+CREATE TABLE defence_fleet (
     id bigserial PRIMARY KEY,
     owner_id bigint NOT NULL REFERENCES player(id),
     stationed_to bigint NOT NULL REFERENCES solar_system(id)
 );
 
-CREATE TABLE ship_to_defense_fleet (
+CREATE TABLE ship_to_defence_fleet (
     ship_id bigint NOT NULL REFERENCES ship(id),
-    fleet_id bigint NOT NULL REFERENCES defense_fleet(id),
+    fleet_id bigint NOT NULL REFERENCES defence_fleet(id),
     quantity integer NOT NULL,
     PRIMARY KEY (ship_id, fleet_id)
 );
@@ -90,7 +91,7 @@ CREATE TABLE research (
     id bigserial PRIMARY KEY,
     name varchar(32) NOT NULL,
     research_at bigint NOT NULL REFERENCES building(id),
-    research_time_sec integer NOT NULL,
+    research_time_sec integer NOT NULL
 );
 
 CREATE TABLE bonus (

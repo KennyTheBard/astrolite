@@ -4,6 +4,7 @@ import com.impaler.astrolite.model.Player;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -45,5 +46,8 @@ public class Colony {
 
     @Column(name = "crystalite_storage")
     private Integer uraniumPerHour;
+
+    @Column(name = "last_resource_interrogation")
+    private LocalDateTime lastResourceInterrogation;
 
 }

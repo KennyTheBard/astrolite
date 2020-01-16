@@ -22,8 +22,8 @@ public class Bonus {
     private Research research;
 
     @Column(name = "bonus_type")
-    private BonusType bonusType;
+    private BonusType type;
 
-    @Column(name = "value")
+    @Column(name = "bonus_value")
     private Integer value;
 }

@@ -18,7 +18,7 @@ public class OffensiveStats {
     @JoinColumn(name = "owner_id")
     private Ship owner;
 
-    @Column(name = "damage")
+    @Column(name = "attack_damage")
     private Integer attackDamage;
 
     @Column(name = "damage_type")

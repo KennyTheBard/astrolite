@@ -26,25 +26,25 @@ public class Colony {
     @JoinColumn(name = "solar_system_id")
     private SolarSystem solarSystem;
 
-    @Column(name = "max_storage")
-    private Integer maxStorage;
+    @Column(name = "max_resource_storage")
+    private Integer maxResourceStorage;
 
     @Column(name = "ore")
     private Integer ore;
 
-    @Column(name = "ore_storage")
+    @Column(name = "ore_per_hour")
     private Integer orePerHour;
 
-    @Column(name = "carbon")
+    @Column(name = "carbonite")
     private Integer carbonite;
 
-    @Column(name = "carbon_storage")
+    @Column(name = "carbonite_per_hour")
     private Integer carbonitePerHour;
 
-    @Column(name = "crystalite")
+    @Column(name = "uranium")
     private Integer uranium;
 
-    @Column(name = "crystalite_storage")
+    @Column(name = "uranium_per_hour")
     private Integer uraniumPerHour;
 
     @Column(name = "last_resource_interrogation")

@@ -18,12 +18,12 @@ CREATE TABLE colony (
     name VARCHAR(32) NOT NULL,
     solar_system_id bigint NOT NULL REFERENCES solar_system(id),
     owner_id bigint NOT NULL REFERENCES player(id),
-    max_resource_storage bigint NOT NULL,
-    ore bigint NOT NULL,
+    max_resource_storage integer NOT NULL,
+    ore integer NOT NULL,
     ore_per_hour integer NOT NULL,
-    carbonite bigint NOT NULL,
+    carbonite integer NOT NULL,
     carbonite_per_hour integer NOT NULL,
-    uranium bigint NOT NULL,
+    uranium integer NOT NULL,
     uranium_per_hour integer NOT NULL,
     last_resource_interrogation timestamp NOT NULL
 );
@@ -45,7 +45,7 @@ CREATE TABLE ship (
     id bigserial PRIMARY KEY,
     name varchar(32) NOT NULL,
     build_at bigint NOT NULL REFERENCES building(id),
-    build_time_sec bigint NOT NULL,
+    build_time_sec integer NOT NULL,
     travel_speed real NOT NULL,
     health integer NOT NULL,
     storage integer NOT NULL
@@ -54,15 +54,15 @@ CREATE TABLE ship (
 CREATE TABLE offensive_stats (
     id bigserial PRIMARY KEY,
     owner_id bigint NOT NULL REFERENCES ship(id),
-    atk integer NOT NULL,
-    damage_type varchar(32) NOT NULL,
-    spd integer NOT NULL
+    attack_damage integer NOT NULL,
+    damage_type integer NOT NULL,
+    attack_speed integer NOT NULL
 );
 
 CREATE TABLE defence_fleet (
     id bigserial PRIMARY KEY,
     owner_id bigint NOT NULL REFERENCES player(id),
-    stationed_to bigint NOT NULL REFERENCES solar_system(id)
+    stationed_at bigint NOT NULL REFERENCES solar_system(id)
 );
 
 CREATE TABLE ship_to_defence_fleet (
@@ -98,7 +98,7 @@ CREATE TABLE bonus (
     id bigserial PRIMARY KEY,
     name varchar(32) NOT NULL,
     research_id bigint NOT NULL REFERENCES research(id),
-    bonus_type varchar(32) NOT NULL, -- add, multiply, subtract, divide
+    bonus_type integer NOT NULL, -- add, multiply, subtract, divide
     bonus_value integer NOT NULL
 );
 

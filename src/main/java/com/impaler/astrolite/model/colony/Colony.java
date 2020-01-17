@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 public class Colony {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -49,5 +51,8 @@ public class Colony {
 
     @Column(name = "last_resource_interrogation")
     private LocalDateTime lastResourceInterrogation;
+
+    @OneToMany(mappedBy = "colony")
+    private List<BuildingToColony> buildings;
 
 }

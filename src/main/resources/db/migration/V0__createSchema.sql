@@ -46,7 +46,7 @@ CREATE TABLE ship (
     name varchar(32) NOT NULL,
     build_at bigint NOT NULL REFERENCES building(id),
     build_time_sec integer NOT NULL,
-    travel_speed real NOT NULL,
+    travel_speed integer NOT NULL,
     health integer NOT NULL,
     storage integer NOT NULL
 );

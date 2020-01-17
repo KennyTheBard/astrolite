@@ -5,6 +5,7 @@ import com.impaler.astrolite.model.colony.SolarSystem;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -12,6 +13,7 @@ import javax.persistence.*;
 public class AttackFleet {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -30,4 +32,6 @@ public class AttackFleet {
     @Column(name = "travel_speed")
     private Integer travelSpeed;
 
+    @OneToMany(mappedBy = "fleet")
+    private List<ShipToAttackFleet> ships;
 }

@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class ConstraintResearch implements Serializable {
 
     @Id
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "research_id")
     private Research research;
 

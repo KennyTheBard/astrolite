@@ -4,6 +4,7 @@ import com.impaler.astrolite.model.colony.Building;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -11,6 +12,7 @@ import javax.persistence.*;
 public class Research {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -23,4 +25,10 @@ public class Research {
 
     @Column(name = "research_time_sec")
     private Integer researchTimeInSec;
+
+    @OneToMany(mappedBy = "research")
+    private List<ConstraintResearch> constraints;
+
+    @OneToMany(mappedBy = "research")
+    private List<Bonus> bonuses;
 }

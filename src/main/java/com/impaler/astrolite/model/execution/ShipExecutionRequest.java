@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 public class ShipExecutionRequest {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

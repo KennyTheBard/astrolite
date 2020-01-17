@@ -18,7 +18,7 @@ public class ShipToDefenceFleet implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "fleet_id")
-    private AttackFleet fleet;
+    private DefenceFleet fleet;
 
     @Column(name = "quantity")
     private Integer quantity;

@@ -13,7 +13,7 @@ public class ShipToDefenceFleet implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "ship_id")
-    private Ship shipId;
+    private Ship ship;
 
     @Id
     @ManyToOne

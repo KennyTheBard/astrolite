@@ -1,6 +1,8 @@
 package com.impaler.astrolite.model.colony;
 
 import com.impaler.astrolite.model.Player;
+import com.impaler.astrolite.model.resource.ColonyResourceInventory;
+import com.impaler.astrolite.model.resource.ColonyResourceProduction;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -28,31 +30,15 @@ public class Colony {
     @JoinColumn(name = "solar_system_id")
     private SolarSystem solarSystem;
 
-    @Column(name = "max_resource_storage")
-    private Integer maxResourceStorage;
-
-    @Column(name = "ore")
-    private Integer ore;
-
-    @Column(name = "ore_per_hour")
-    private Integer orePerHour;
-
-    @Column(name = "carbonite")
-    private Integer carbonite;
-
-    @Column(name = "carbonite_per_hour")
-    private Integer carbonitePerHour;
-
-    @Column(name = "uranium")
-    private Integer uranium;
-
-    @Column(name = "uranium_per_hour")
-    private Integer uraniumPerHour;
-
-    @Column(name = "last_resource_interrogation")
-    private LocalDateTime lastResourceInterrogation;
+    @Column(name = "max_resource_inventory")
+    private Integer maxResourceInventory;
 
     @OneToMany(mappedBy = "colony")
     private List<BuildingToColony> buildings;
 
+    @OneToMany(mappedBy = "colony")
+    private List<ColonyResourceInventory> resourceInventories;
+
+    @OneToMany(mappedBy = "colony")
+    private List<ColonyResourceProduction> resourceProductions;
 }

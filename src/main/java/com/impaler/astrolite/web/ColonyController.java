@@ -15,7 +15,7 @@ public class ColonyController {
     private ColonyService colonyService;
 
     @GetMapping(value = "/resources/{id}")
-    public Map<String, Integer> getResources(@PathVariable Long id) {
+    public Map<String, Object> getResources(@PathVariable Long id) {
         return colonyService.interrogateResource(id);
     }
 

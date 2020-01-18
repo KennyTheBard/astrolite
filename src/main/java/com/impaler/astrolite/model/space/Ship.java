@@ -33,11 +33,14 @@ public class Ship {
     @Column(name = "health")
     private Integer health;
 
-    @Column(name = "storage")
-    private Integer storage;
+    @Column(name = "inventory")
+    private Integer inventory;
 
     @OneToMany(mappedBy = "owner")
     private List<OffensiveStats> offensiveStats;
+
+    @OneToMany(mappedBy = "owner")
+    private List<DefensiveStats> defensiveStats;
 
     @OneToMany(mappedBy = "ship")
     private List<ConstraintShip> constraints;

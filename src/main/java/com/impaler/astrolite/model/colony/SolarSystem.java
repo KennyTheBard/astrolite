@@ -1,8 +1,10 @@
 package com.impaler.astrolite.model.colony;
 
+import com.impaler.astrolite.model.resource.SolarSystemResourceModifier;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,13 +25,7 @@ public class SolarSystem {
     @Column(name = "angle_to_core")
     private Integer angleToCore;
 
-    @Column(name = "ore_modifier")
-    private Float oreModifier;
-
-    @Column(name = "carbonite_modifier")
-    private Float carboniteModifier;
-
-    @Column(name = "uranium_modifier")
-    private Float uraniumModifier;
+    @OneToMany(mappedBy = "solarSystem")
+    private List<SolarSystemResourceModifier> modifiers;
 
 }

@@ -23,7 +23,7 @@ public class ColonyResourceInventory implements Serializable {
     private Colony colony;
 
     @Column(name = "quantity")
-    private Integer quantity;
+    private Float quantity;
 
     @Column(name = "last_resource_interrogation")
     private LocalDateTime lastResourceInterrogation;

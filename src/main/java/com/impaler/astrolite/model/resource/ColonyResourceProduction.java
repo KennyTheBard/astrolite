@@ -21,7 +21,7 @@ public class ColonyResourceProduction implements Serializable {
     @JoinColumn(name = "colony_id")
     private Colony colony;
 
-    @Column(name = "production_per_hour")
-    private Integer productionPerHour;
+    @Column(name = "production_per_second")
+    private Float productionPerSecond;
 
 }

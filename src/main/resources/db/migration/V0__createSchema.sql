@@ -33,7 +33,7 @@ CREATE TABLE colony (
 CREATE TABLE colony_resource_inventory (
     resource_id bigint NOT NULL REFERENCES resource(id),
     colony_id bigint NOT NULL REFERENCES colony(id),
-    quantity integer NOT NULL,
+    quantity real NOT NULL,
     last_resource_interrogation timestamp NOT NULL,
     PRIMARY KEY (resource_id, colony_id)
 );
@@ -41,7 +41,7 @@ CREATE TABLE colony_resource_inventory (
 CREATE TABLE colony_resource_production (
     resource_id bigint NOT NULL REFERENCES resource(id),
     colony_id bigint NOT NULL REFERENCES colony(id),
-    production_per_hour integer NOT NULL,
+    production_per_second real NOT NULL,
     PRIMARY KEY (resource_id, colony_id)
 );
 

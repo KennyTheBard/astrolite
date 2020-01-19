@@ -1,6 +1,5 @@
 package com.impaler.astrolite.model.space;
 
-import com.impaler.astrolite.model.enums.DamageType;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,7 +21,8 @@ public class OffensiveStats {
     @Column(name = "attack_damage")
     private Integer attackDamage;
 
-    @Column(name = "damage_type")
+    @ManyToOne
+    @JoinColumn(name = "damage_type_id")
     private DamageType damageType;
 
     @Column(name = "attack_speed")

@@ -75,6 +75,11 @@ CREATE TABLE ship (
     inventory integer NOT NULL
 );
 
+CREATE TABLE damage_type (
+    id bigserial PRIMARY KEY,
+    name VARCHAR(32) UNIQUE NOT NULL
+);
+
 CREATE TABLE ship_resource_cost (
     resource_id bigint NOT NULL REFERENCES resource(id),
     ship_id bigint NOT NULL REFERENCES ship(id),
@@ -86,7 +91,7 @@ CREATE TABLE offensive_stats (
     id bigserial PRIMARY KEY,
     owner_id bigint NOT NULL REFERENCES ship(id),
     attack_damage integer NOT NULL,
-    damage_type integer NOT NULL,
+    damage_type_id bigint NOT NULL REFERENCES damage_type(id),
     attack_speed integer NOT NULL
 );
 
@@ -94,7 +99,7 @@ CREATE TABLE defensive_stats (
     id bigserial PRIMARY KEY,
     owner_id bigint NOT NULL REFERENCES ship(id),
     defence integer NOT NULL,
-    damage_type integer NOT NULL
+    damage_type_id bigint NOT NULL REFERENCES damage_type(id)
 );
 
 CREATE TABLE defence_fleet (

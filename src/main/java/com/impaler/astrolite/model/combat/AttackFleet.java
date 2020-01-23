@@ -1,7 +1,6 @@
 package com.impaler.astrolite.model.combat;
 
 import com.impaler.astrolite.model.Player;
-import com.impaler.astrolite.model.base.AttackFleetLoot;
 import com.impaler.astrolite.model.base.SolarSystem;
 import lombok.Data;
 

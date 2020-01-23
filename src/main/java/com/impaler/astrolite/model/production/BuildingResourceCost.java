@@ -1,5 +1,7 @@
-package com.impaler.astrolite.model.base;
+package com.impaler.astrolite.model.production;
 
+import com.impaler.astrolite.model.base.Building;
+import com.impaler.astrolite.model.base.Resource;
 import lombok.Data;
 
 import javax.persistence.*;

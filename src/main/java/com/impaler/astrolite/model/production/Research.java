@@ -28,7 +28,4 @@ public class Research {
 
     @OneToMany(mappedBy = "research")
     private List<ConstraintResearch> constraints;
-
-    @OneToMany(mappedBy = "research")
-    private List<Bonus> bonuses;
 }

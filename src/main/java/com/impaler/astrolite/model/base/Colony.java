@@ -31,7 +31,7 @@ public class Colony {
     private Integer maxResourceInventory;
 
     @OneToMany(mappedBy = "colony")
-    private List<BuildingToColony> buildings;
+    private List<ColonyBuilding> buildings;
 
     @OneToMany(mappedBy = "colony")
     private List<ColonyResourceInventory> resourceInventories;

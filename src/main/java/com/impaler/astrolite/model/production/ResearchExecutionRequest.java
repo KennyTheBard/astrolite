@@ -1,7 +1,6 @@
 package com.impaler.astrolite.model.production;
 
-import com.impaler.astrolite.model.base.BuildingToColony;
-import com.impaler.astrolite.model.production.Research;
+import com.impaler.astrolite.model.base.ColonyBuilding;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,8 +20,8 @@ public class ResearchExecutionRequest {
     private LocalDateTime requestCreationTime;
 
     @ManyToOne
-    @JoinColumn(name = "building_to_colony_id")
-    private BuildingToColony requestLocation;
+    @JoinColumn(name = "colony_building_id")
+    private ColonyBuilding requestLocation;
 
     @ManyToOne
     @JoinColumn(name = "research_id")

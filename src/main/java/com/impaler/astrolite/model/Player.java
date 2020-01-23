@@ -1,7 +1,7 @@
 package com.impaler.astrolite.model;
 
 import com.impaler.astrolite.model.base.Colony;
-import com.impaler.astrolite.model.production.PlayerToResearch;
+import com.impaler.astrolite.model.production.ResearchPlayer;
 import com.impaler.astrolite.model.combat.AttackFleet;
 import com.impaler.astrolite.model.combat.DefenceFleet;
 import lombok.Data;
@@ -32,6 +32,6 @@ public class Player {
     private List<DefenceFleet> defenceFleets;
 
     @OneToMany(mappedBy = "player")
-    private List<PlayerToResearch> researched;
+    private List<ResearchPlayer> researched;
 
 }

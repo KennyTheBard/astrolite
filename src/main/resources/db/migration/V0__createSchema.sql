@@ -151,14 +151,6 @@ CREATE TABLE research_resource_cost (
     PRIMARY KEY (resource_id, research_id)
 );
 
-CREATE TABLE bonus (
-    id bigserial PRIMARY KEY,
-    name varchar(32) NOT NULL,
-    research_id bigint NOT NULL REFERENCES research(id),
-    bonus_type integer NOT NULL, -- add, multiply, subtract, divide
-    bonus_value integer NOT NULL
-);
-
 CREATE TABLE research_player (
     player_id bigint NOT NULL REFERENCES player(id),
     research_id bigint NOT NULL REFERENCES research(id),

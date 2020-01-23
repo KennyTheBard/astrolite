@@ -1,6 +1,6 @@
-package com.impaler.astrolite.model.base;
+package com.impaler.astrolite.model.combat;
 
-import com.impaler.astrolite.model.combat.AttackFleet;
+import com.impaler.astrolite.model.base.Resource;
 import lombok.Data;
 
 import javax.persistence.*;

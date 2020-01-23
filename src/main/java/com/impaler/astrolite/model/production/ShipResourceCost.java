@@ -1,5 +1,6 @@
-package com.impaler.astrolite.model.base;
+package com.impaler.astrolite.model.production;
 
+import com.impaler.astrolite.model.base.Resource;
 import com.impaler.astrolite.model.combat.Ship;
 import lombok.Data;
 

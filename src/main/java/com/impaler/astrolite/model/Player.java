@@ -1,9 +1,9 @@
 package com.impaler.astrolite.model;
 
-import com.impaler.astrolite.model.colony.Colony;
-import com.impaler.astrolite.model.research.PlayerToResearch;
-import com.impaler.astrolite.model.space.AttackFleet;
-import com.impaler.astrolite.model.space.DefenceFleet;
+import com.impaler.astrolite.model.base.Colony;
+import com.impaler.astrolite.model.production.PlayerToResearch;
+import com.impaler.astrolite.model.combat.AttackFleet;
+import com.impaler.astrolite.model.combat.DefenceFleet;
 import lombok.Data;
 
 import javax.persistence.*;

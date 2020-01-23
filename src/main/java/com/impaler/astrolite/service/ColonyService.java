@@ -1,7 +1,7 @@
 package com.impaler.astrolite.service;
 
-import com.impaler.astrolite.model.colony.Colony;
-import com.impaler.astrolite.model.resource.Resource;
+import com.impaler.astrolite.model.base.Colony;
+import com.impaler.astrolite.model.base.Resource;
 import com.impaler.astrolite.repository.ColonyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

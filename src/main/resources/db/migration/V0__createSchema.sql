@@ -58,7 +58,7 @@ CREATE TABLE building_resource_cost (
     PRIMARY KEY (resource_id, building_id)
 );
 
-CREATE TABLE building_to_colony (
+CREATE TABLE colony_building (
     id bigserial PRIMARY KEY,
     building_id bigint NOT NULL REFERENCES building(id),
     colony_id bigint NOT NULL REFERENCES colony(id),
@@ -98,7 +98,7 @@ CREATE TABLE offensive_stats (
 CREATE TABLE defensive_stats (
     id bigserial PRIMARY KEY,
     owner_id bigint NOT NULL REFERENCES ship(id),
-    defence integer NOT NULL,
+    armor integer NOT NULL,
     damage_type_id bigint NOT NULL REFERENCES damage_type(id)
 );
 
@@ -108,7 +108,7 @@ CREATE TABLE defence_fleet (
     stationed_at bigint NOT NULL REFERENCES solar_system(id)
 );
 
-CREATE TABLE ship_to_defence_fleet (
+CREATE TABLE defence_fleet_ship (
     ship_id bigint NOT NULL REFERENCES ship(id),
     fleet_id bigint NOT NULL REFERENCES defence_fleet(id),
     quantity integer NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE attack_fleet_loot (
     PRIMARY KEY (resource_id, attack_fleet_id)
 );
 
-CREATE TABLE ship_to_attack_fleet (
+CREATE TABLE attack_fleet_ship (
     ship_id bigint NOT NULL REFERENCES ship(id),
     fleet_id bigint NOT NULL REFERENCES attack_fleet(id),
     quantity integer NOT NULL,
@@ -159,7 +159,7 @@ CREATE TABLE bonus (
     bonus_value integer NOT NULL
 );
 
-CREATE TABLE player_to_research (
+CREATE TABLE research_player (
     player_id bigint NOT NULL REFERENCES player(id),
     research_id bigint NOT NULL REFERENCES research(id),
     PRIMARY KEY (player_id, research_id)
@@ -180,7 +180,7 @@ CREATE TABLE constraint_research (
 CREATE TABLE ship_execution_request (
     id bigserial PRIMARY KEY,
     request_creation_time timestamp NOT NULL,
-    building_to_colony_id bigint NOT NULL REFERENCES building_to_colony(id),
+    colony_building_id bigint NOT NULL REFERENCES colony_building(id),
     ship_id bigint NOT NULL REFERENCES ship(id),
     quantity integer NOT NULL
 );
@@ -188,6 +188,6 @@ CREATE TABLE ship_execution_request (
 CREATE TABLE research_execution_request (
     id bigserial PRIMARY KEY,
     request_creation_time timestamp NOT NULL,
-    building_to_colony_id bigint NOT NULL REFERENCES building_to_colony(id),
+    colony_building_id bigint NOT NULL REFERENCES colony_building(id),
     research_id bigint NOT NULL REFERENCES research(id)
 );

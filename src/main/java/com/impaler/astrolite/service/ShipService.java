@@ -21,16 +21,12 @@ public class ShipService {
                     .collect(
                             Collectors.toMap(
                                     def -> def.getAgainst().getName(),
-                                    def -> def.getDefence()
+                                    def -> def.getArmor()
                             )
                     )
             );
         });
         return stats;
-    }
-
-    private Float calculateDamageReduction(Integer armor) {
-        return 1f - 100f / (100f + armor);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.impaler.astrolite.repository;
 
-import com.impaler.astrolite.model.colony.SolarSystem;
+import com.impaler.astrolite.model.base.SolarSystem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.impaler.astrolite.repository;
 
-import com.impaler.astrolite.model.research.Research;
+import com.impaler.astrolite.model.production.Research;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

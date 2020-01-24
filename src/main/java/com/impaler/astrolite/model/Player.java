@@ -4,12 +4,18 @@ import com.impaler.astrolite.model.base.Colony;
 import com.impaler.astrolite.model.production.ResearchPlayer;
 import com.impaler.astrolite.model.combat.AttackFleet;
 import com.impaler.astrolite.model.combat.DefenceFleet;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "player")
 public class Player {

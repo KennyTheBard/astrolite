@@ -18,7 +18,7 @@ CREATE TABLE solar_system (
 CREATE TABLE solar_system_resource_modifier (
     resource_id bigint NOT NULL REFERENCES resource(id),
     solar_system_id bigint NOT NULL REFERENCES solar_system(id),
-    modifier real NOT NULL,
+    value real NOT NULL,
     PRIMARY KEY (resource_id, solar_system_id)
 );
 
@@ -169,17 +169,17 @@ CREATE TABLE constraint_research (
     PRIMARY KEY (required_research_id, research_id)
 );
 
-CREATE TABLE ship_execution_request (
+CREATE TABLE ship_production (
     id bigserial PRIMARY KEY,
-    request_creation_time timestamp NOT NULL,
+    creation_time timestamp NOT NULL,
     colony_building_id bigint NOT NULL REFERENCES colony_building(id),
     ship_id bigint NOT NULL REFERENCES ship(id),
     quantity integer NOT NULL
 );
 
-CREATE TABLE research_execution_request (
+CREATE TABLE research_production (
     id bigserial PRIMARY KEY,
-    request_creation_time timestamp NOT NULL,
+    creation_time timestamp NOT NULL,
     colony_building_id bigint NOT NULL REFERENCES colony_building(id),
     research_id bigint NOT NULL REFERENCES research(id)
 );

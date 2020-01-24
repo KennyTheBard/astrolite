@@ -2,13 +2,19 @@ package com.impaler.astrolite.model.combat;
 
 import com.impaler.astrolite.model.Player;
 import com.impaler.astrolite.model.base.SolarSystem;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "attack_fleet")
 public class AttackFleet implements IFleet {

@@ -1,10 +1,16 @@
 package com.impaler.astrolite.model.base;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "colony_building")
 public class ColonyBuilding {

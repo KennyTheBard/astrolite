@@ -2,12 +2,18 @@ package com.impaler.astrolite.model.production;
 
 import com.impaler.astrolite.model.base.Building;
 import com.impaler.astrolite.model.base.Resource;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "building_resource_cost")
 public class BuildingResourceCost implements Serializable {

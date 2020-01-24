@@ -1,11 +1,17 @@
 package com.impaler.astrolite.model.combat;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "defence_fleet_ship")
 public class DefenceFleetShip implements Serializable, IFleetShip {

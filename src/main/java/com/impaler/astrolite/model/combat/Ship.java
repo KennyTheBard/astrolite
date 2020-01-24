@@ -2,12 +2,18 @@ package com.impaler.astrolite.model.combat;
 
 import com.impaler.astrolite.model.base.Building;
 import com.impaler.astrolite.model.production.ConstraintShip;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "ship")
 public class Ship {

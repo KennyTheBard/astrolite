@@ -39,9 +39,9 @@ public class Colony {
     @OneToMany(mappedBy = "colony")
     private List<ColonyBuilding> buildings;
 
-    @OneToMany(mappedBy = "colony")
+    @OneToMany(mappedBy = "colony", cascade = CascadeType.ALL)
     private List<ColonyResourceInventory> resourceInventories;
 
-    @OneToMany(mappedBy = "colony")
+    @OneToMany(mappedBy = "colony", cascade = CascadeType.ALL)
     private List<ColonyResourceProduction> resourceProductions;
 }

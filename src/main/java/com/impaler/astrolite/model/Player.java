@@ -31,13 +31,13 @@ public class Player {
     @OneToMany(mappedBy = "owner")
     private List<Colony> colonies;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<AttackFleet> attackFleets;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<DefenceFleet> defenceFleets;
 
-    @OneToMany(mappedBy = "player")
+    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL)
     private List<ResearchPlayer> researched;
 
 }

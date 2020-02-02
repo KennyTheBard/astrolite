@@ -32,7 +32,7 @@ public class DefenceFleet implements IFleet {
     @JoinColumn(name = "stationed_at")
     private SolarSystem stationedAt;
 
-    @OneToMany(mappedBy = "fleet")
+    @OneToMany(mappedBy = "fleet", cascade = CascadeType.ALL)
     private List<DefenceFleetShip> ships;
 
     @Override

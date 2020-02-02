@@ -39,10 +39,10 @@ public class AttackFleet implements IFleet {
     @Column(name = "travel_speed")
     private Integer travelSpeed;
 
-    @OneToMany(mappedBy = "fleet")
+    @OneToMany(mappedBy = "fleet", cascade = CascadeType.ALL)
     private List<AttackFleetShip> ships;
 
-    @OneToMany(mappedBy = "attackFleet")
+    @OneToMany(mappedBy = "attackFleet", cascade = CascadeType.ALL)
     private List<AttackFleetLoot> loot;
 
     @Override

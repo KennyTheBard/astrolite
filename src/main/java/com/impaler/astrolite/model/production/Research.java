@@ -32,6 +32,9 @@ public class Research {
     @Column(name = "research_time_sec")
     private Integer researchTimeInSec;
 
-    @OneToMany(mappedBy = "research")
+    @OneToMany(mappedBy = "research", cascade = CascadeType.ALL)
     private List<ConstraintResearch> constraints;
+
+    @OneToMany(mappedBy = "research", cascade = CascadeType.ALL)
+    private List<ResearchResourceCost> resourceCosts;
 }

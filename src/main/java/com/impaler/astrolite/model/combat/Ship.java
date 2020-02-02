@@ -42,12 +42,12 @@ public class Ship {
     @Column(name = "inventory")
     private Integer inventory;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<OffensiveStats> offensiveStats;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<DefensiveStats> defensiveStats;
 
-    @OneToMany(mappedBy = "ship")
+    @OneToMany(mappedBy = "ship", cascade = CascadeType.ALL)
     private List<ConstraintShip> constraints;
 }

@@ -30,7 +30,7 @@ public class SolarSystem {
     @Column(name = "angle_to_core")
     private Integer angleToCore;
 
-    @OneToMany(mappedBy = "solarSystem")
+    @OneToMany(mappedBy = "solarSystem", cascade = CascadeType.ALL)
     private List<SolarSystemResourceModifier> modifiers;
 
 }
